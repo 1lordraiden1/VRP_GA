@@ -1,13 +1,13 @@
 # Traveling Salesman Problem - VRP
 # For Artificial Intelligence
 # Project 6 by Chase Kosek
+import numpy as np
 import random
 import copy
 import os
 import time
 import math
 import csv
-import numpy as np
 from tkinter import *
 
 # global vars for holding values used throughout
@@ -53,6 +53,7 @@ class Node(object):
             tmp_dist = self.distance(self.x, self.y, node.x, node.y)
             self.DistanceDict[node.name] = tmp_dist
 
+    # calculating distance between 2 points in 2d (haversine (lat,lon))
     def distance(self,x1,y1,x2,y2):
         return math.sqrt( ((x2-x1)**2)+((y2-y1)**2))
 
@@ -383,7 +384,7 @@ class Run(object):
             # Evolves the population:
             pop = GA().PopEvolve(pop)
 
-            # Saves shorter path to best orute
+            # Saves shorter path to best route
             if pop.fittest.length < best_path.length:
                 # set the path (copy.deepcopy because pop.fittest is persistent in this loop so will cause reference bugs)
                 best_path = copy.deepcopy(pop.fittest)
