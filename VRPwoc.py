@@ -298,7 +298,8 @@ class Run(object):
         #self.window.after(0,self.GA_loop(self.generations, self.pop_size))
         #self.window.mainloop()
 
-
+    ## Graphical
+    
     def GraphingCoords(self):
         # Very high and low numbers to be overruled
         min_x = 999999999999999
@@ -415,6 +416,7 @@ class Run(object):
         best_route.append(pop.fittest.GetPath())
         best_route_length = best_route_length + best_path.length
 
+## Usage
 
 def GeneticTSP():
     for city in list_of_cities:
