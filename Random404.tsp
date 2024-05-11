@@ -1,0 +1,2 @@
+NAME : task1
+TYPE TSP
